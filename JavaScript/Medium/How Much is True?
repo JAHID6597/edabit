@@ -1,0 +1,7 @@
+function countTrue(arr) {
+	let cntTrue = 0;
+	for(const i in arr){
+		if(arr[i])cntTrue++;
+	}
+	return cntTrue;
+}
