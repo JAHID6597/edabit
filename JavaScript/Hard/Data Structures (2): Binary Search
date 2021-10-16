@@ -1,0 +1,18 @@
+const findMid = (l, h) => parseInt(l + (h - l) / 2)
+
+function binary(arr, n) {
+	let l = 0
+	let h = arr.length - 1
+	let mid = findMid(l, h)
+	let ansIdx = -1
+	while(h >= l){
+		if(arr[mid] < n) l = mid + 1
+		else if(arr[mid] > n) h = mid - 1
+		else {
+			ansIdx = mid
+			break
+		}
+		mid = findMid(l, h)
+	}
+	return ansIdx
+}
