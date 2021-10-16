@@ -1,0 +1,8 @@
+function rotateArray(arr, n) {
+	const len = arr.length
+	const rotate = Math.abs(n) % len
+	const s = n > 0 ? len - rotate : rotate
+	const a = arr.slice(0, s)
+	const b = arr.slice(s)
+	return [...b, ...a]
+}
