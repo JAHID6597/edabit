@@ -1,0 +1,7 @@
+function windowMaxes(array, windowLength) {
+	const ans = []
+	for(let i = 0; i <= array.length - windowLength; i++){
+		ans.push(Math.max(...array.slice(i, i+windowLength)))
+	}
+	return ans
+}
