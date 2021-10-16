@@ -1,0 +1,6 @@
+function sortIt(arr) {
+	return arr.sort((a, b) => 
+		(Array.isArray(a) ? a.sort((p, q) => p-q) : a)
+		- (Array.isArray(b) ? b.sort((p, q) => p-q) : b)
+	)
+}
