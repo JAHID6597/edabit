@@ -1,0 +1,12 @@
+function isPositiveDominant(a) {
+	const ua = []
+	a.forEach(item => {
+		if(!ua.includes(item))ua.push(item)
+	})
+	let pc = 0, nc = 0
+	ua.forEach(item => {
+		if(item > 0)++pc
+		if(item < 0)++nc
+	})
+	return pc > nc
+}
