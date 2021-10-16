@@ -1,0 +1,22 @@
+const reducer = (p, c) => p + c
+
+const product = (n) => {
+	if(n === 0)return n
+	let multi = 1
+	while(n > 0){
+		let r = n % 10
+		multi *= r
+		n = parseInt(n / 10)
+	}
+	return multi
+}
+
+function sumDigProd() {
+	const val = Array.prototype.slice.call(arguments)
+	const sum = val.reduce(reducer)
+	let prod = product(sum)
+	while(prod.toString().length > 1){
+		prod = product(prod)
+	}
+	return prod;
+}
