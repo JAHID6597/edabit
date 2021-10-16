@@ -1,0 +1,11 @@
+function getMax(a, b){
+	return a > b ? a : b;
+}
+
+function findHighest(arr) {
+	const n = arr.length;
+	if(n === 1)
+		return arr[n-1]
+	else 
+		return getMax(arr[n-1], findHighest(arr.slice(0, n-1)))
+}
