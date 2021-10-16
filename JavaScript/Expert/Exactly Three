@@ -1,0 +1,10 @@
+function isExactlyThree(n) {
+	let counter = 0;
+	for(let i=1; i<= parseInt(Math.sqrt(n)); i++){
+		if(n%i === 0 ){
+			if(n/i === i)counter++
+			else counter+=2
+		}
+	}
+	return counter === 3 ? true : false
+}
