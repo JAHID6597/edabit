@@ -1,0 +1,4 @@
+function redundant(str) {
+	const fun = () => str;
+	return fun;
+}
