@@ -1,0 +1,23 @@
+const isUpper = (str) => {
+	return str === str.toUpperCase()
+}
+
+const strsum = item => {
+	let s = 0
+	const str = item.toLowerCase()
+	for(const i in str){
+		s += (str[i] >= 'a' && str[i] <= 'z') 
+			? str.charCodeAt(i) - 'a'.charCodeAt(0) + 1 
+			: 0
+	}
+	return isUpper(item) ? s * 2 : s
+}
+
+function getSentenceValue(str) {
+	const arr = str.split(' ')
+	let s = 0
+	arr.forEach(item => {
+		s += strsum(item)
+	})
+	return s
+}
