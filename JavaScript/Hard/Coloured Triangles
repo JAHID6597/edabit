@@ -1,0 +1,19 @@
+function colouredTriangle(row) {	
+	while(row.length > 1){
+		let s = ''
+		for(let i=1; i<row.length;i++){
+			if(row[i-1] === row[i])s += row[i]
+		
+			else if(row[i-1] === 'R' && row[i] === 'G')s += 'B'
+			else if(row[i-1] === 'R' && row[i] === 'B')s += 'G'
+		
+			else if(row[i-1] === 'G' && row[i] === 'R')s += 'B'
+			else if(row[i-1] === 'G' && row[i] === 'B')s += 'R'
+		
+			else if(row[i-1] === 'B' && row[i] === 'G')s += 'R'
+			else if(row[i-1] === 'B' && row[i] === 'R')s += 'G'
+		}
+		row = s
+	}
+	return row
+}
