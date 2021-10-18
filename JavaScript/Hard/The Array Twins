@@ -1,0 +1,13 @@
+function twins(arr) {
+	let sum = arr.reduce((p, c) => p+c)
+	let idx, nsum=0
+	for(let i=arr.length-1; i >= 0; i--){
+		nsum += arr[i]
+		sum -= arr[i]
+		if(sum === nsum){
+			idx = i
+			break
+		}
+	}
+	return idx
+}
