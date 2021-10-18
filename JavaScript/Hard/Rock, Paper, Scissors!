@@ -1,0 +1,12 @@
+function calculateScore(games) {
+	let Abigail = 0, Benson = 0
+	games.forEach(game => {
+		if(game[0] === 'R' && game[1] === 'S')Abigail++
+		else if(game[0] === 'P' && game[1] === 'R')Abigail++
+		else if(game[0] === 'S' && game[1] === 'P')Abigail++
+		else if(game[0] !== game[1])Benson++
+	})
+	if(Abigail > Benson)return 'Abigail'
+	else if(Abigail < Benson)return 'Benson'
+	else return 'Tie'
+}
