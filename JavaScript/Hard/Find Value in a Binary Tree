@@ -1,0 +1,15 @@
+function valueInTree(tree, val) {
+	let valueExist = false
+	
+	const traverse = tree => {
+		tree.forEach(item => {
+			if(Array.isArray(item))
+				traverse(item)
+			else if(item === val)
+				valueExist = true
+		})
+	}
+	traverse(tree)
+	
+	return valueExist							 
+}
