@@ -1,0 +1,15 @@
+const bar = (length, char) => {
+	let s = ''
+	for(let i = 0; i < length; i++){
+		s += char
+	}
+	return s
+}
+
+function histogram(arr, char) {
+	let histograms = ''
+	arr.forEach(length => {
+			histograms += bar(length, char) + '\n'
+	})
+	return histograms.slice(0, histograms.length - 1)
+}
