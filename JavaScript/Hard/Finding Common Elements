@@ -1,0 +1,10 @@
+function commonElements(arr1, arr2) {
+	const unique = {}
+	arr1.forEach(item => { unique[item] = 1 })
+	arr2.forEach(item => { if(unique[item])unique[item] = 2 })
+	const ans = []
+	for(const item of Object.keys(unique)){
+		if(unique[item] === 2)ans.push(Number(item))
+	}
+	return ans
+}
