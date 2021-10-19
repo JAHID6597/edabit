@@ -1,0 +1,22 @@
+const northHemisphere = (month, day) => {
+  if (month >= 3 && day >= 1 && month <= 5 && day <= 31) return 'Spring';
+  else if (month >= 6 && day >= 1 && month <= 8 && day <= 31) return 'Summer';
+  else if (month >= 9 && day >= 1 && month <= 11 && day <= 31) return 'Autumn';
+  else return 'Winter';
+};
+
+const southHemisphere = (month, day) => {
+  if (month >= 3 && day >= 1 && month <= 5 && day <= 31) return 'Autumn';
+  else if (month >= 6 && day >= 1 && month <= 8 && day <= 31) return 'Winter';
+  else if (month >= 9 && day >= 1 && month <= 11 && day <= 31) return 'Spring';
+  else return 'Summer';
+};
+
+function hemisphereSeason(hemisphere, date) {
+  date = new Date(date);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return hemisphere === 'N'
+    ? northHemisphere(month, day)
+    : southHemisphere(month, day);
+}
